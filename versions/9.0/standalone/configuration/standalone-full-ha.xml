@@ -370,17 +370,17 @@
                     <in-vm-acceptor name="in-vm" server-id="0"/>
                 </acceptors>
                 <broadcast-groups>
-                    <broadcast-group name="bg-group1">
+                    <!--broadcast-group name="bg-group1">
                         <jgroups-stack>udp</jgroups-stack>
                         <jgroups-channel>hq-cluster</jgroups-channel>
                         <connector-ref>http-connector</connector-ref>
-                    </broadcast-group>
+                    </broadcast-group-->
                 </broadcast-groups>
                 <discovery-groups>
-                    <discovery-group name="dg-group1">
+                    <!--discovery-group name="dg-group1">
                         <jgroups-stack>udp</jgroups-stack>
                         <jgroups-channel>hq-cluster</jgroups-channel>
-                    </discovery-group>
+                    </discovery-group-->
                 </discovery-groups>
                 <cluster-connections>
                     <cluster-connection name="my-cluster">
@@ -559,7 +559,8 @@
         </interface>
     </interfaces>
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
-        <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
+        <socket-binding name="management-native" interface="management" port="${jboss.management.native.port:9999}"/>
+	<socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
         <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
         <socket-binding name="http" port="${jboss.http.port:8080}"/>
